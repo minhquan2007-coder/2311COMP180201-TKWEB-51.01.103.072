@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .sidebar {
+            top: 20px; 
+        }  
+        .sidebar .list-group {
+            margin-bottom: 20px;
+        }
+        .product-detail-container {
+            display: flex;
+            gap: 40px; 
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+        .product-detail-image {
+            flex: 0 0 30%; 
+        }
+        .product-detail-image img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .product-detail-info .product-category {
+            font-size: 0.9em;
+            color: #6c757d;
+            margin-bottom: 4px;
+        }
+
+        .product-detail-info .product-title {
+            font-size: 2em;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .product-detail-info .product-price {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #d0021b;
+            margin-bottom: 25px;
+        }
+        .product-detail-info .actions {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .product-detail-info .quantity-input {
+            width: 60px;
+            height: 40px;
+            text-align: center;
+        }
+        .product-specs {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        .product-specs h3 {
+            margin-bottom: 15px;
+        }
+        .product-specs ul {
+            list-style: none;
+            padding: 0;
+            font-size: 0.95em;
+        }
+
+        .product-specs ul li {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .social-share {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        .social-share a {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            color: #6c757d;
+            text-decoration: none;
+        }
+        .social-share a:hover {
+            color: #007bff;
+        }
+        li {
+            list-style: none;
+        }
+        .spec-table th {
+            width: 25%;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="https://cdn.haitrieu.com/wp-content/uploads/2022/02/Logo-DH-Su-Pham-TPHCM-HCMUE.png" height="40"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="trangchubaitap5.3.html">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Sản phẩm</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Liên hệ</a></li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Tìm</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-9">
+                <div class="product-detail-container">
+                    <div class="product-detail-image">
+                        <img src="https://cdnv2.tgdd.vn/mwg-static/common/News/1584164/z7112032641935_0d5923ff42fc8fb5aeab239c9854d063.jpg" alt="vivo">
+                    </div>
+
+                    <div class="product-detail-info">
+                        <p class="product-category">Điện thoại</p>
+                        <h1 class="product-title">Vivo X300 Pro 5G</h1>
+                        <p class="product-price">21.990.000 đ</p>
+
+                        <div class="actions">
+                            <input type="number" class="form-control quantity-input" value="1" min="1">
+                            <button class="btn btn-primary ms-2 flex-grow-1">Thêm vào giỏ</button>
+                        </div>                       
+                        <div class="product-specs">
+                            <h3>Thông tin sản phẩm</h3>
+                            <ul> 
+                                <li><strong>Màn hình:</strong> <br>
+                                    	LTPO AMOLED, 1 tỷ màu, 120Hz, 2160Hz PWM, HDR10+, HDR Vivid, Dolby Vision, 4500 nits (peak) <br>
+                                        6.78 inches, 1.5K (1260 x 2800 pixels) <br>
+                                        Tỷ lệ 20:9, mật độ điểm ảnh ~452 ppi <br>
+                                </li>
+                                <li><strong>Hệ điều hành:</strong> Android 16, OriginOS 6</li>
+                                <li><strong>CPU:</strong>  <br>
+                                	MediaTek Dimensity 9500 (3 nm)<br>
+                                    8 nhân (1x4.21 GHz & 3x3.5 GHz & 4x2.7 GHz) <br>
+                                    GPU: Arm G1-Ultra</li>
+                                <li><strong>Camera sau:</strong> <br> 
+                                    50 MP, f/1.6, 24mm (góc rộng), 1/1.28", 1.22µm, PDAF, OIS <br>
+                                    200 MP, f/2.7, 85mm (tiềm vọng tele), 1/1.4", 0.56µm, multi-directional PDAF, OIS, zoom quang 3.7x, macro 2.7:1 <br>
+                                    50 MP, f/2.0, 15mm, 119˚ (góc siêu rộng), 1/2.76", 0.64µm, AF <br>
+                                    Quay phim: 8K@30fps, 4K@30/60/120fps, 1080p@30/60/120/240fps, gyro-EIS, 4K@120fps 10-bit Log, Dolby Vision HDR <br>
+                                </li>
+                                <li><strong>Camera trước:</strong> <br>
+                                   	50 MP, f/2.0 (góc rộng), 1/2.76", 0.64µm, AF <br>
+                                    Quay phim: 4K@30/60fps, 1080p@30/60fps
+                                </li>
+                                <li><strong>RAM:</strong> 12-16GB, LPDDR5X Ultra Pro 4 kênh </li>
+                                <li><strong>Bộ nhớ trong:</strong> 256GB-1TB, UFS 4.1</li>
+                                <li><strong>Pin:</strong>
+                                    Si/C Li-Ion 6510 mAh <br>
+                                    Sạc nhanh 90W <br>
+                                    Sạc không dây 40W <br>
+                                    Hỗ trợ sạc ngược có dây và không dây</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="social-share">
+                            <strong>Chia sẻ sản phẩm:</strong>
+                            <div class="mt-2">
+                                <a href="#"><i class="bi bi-facebook"></i></a>
+                                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                                <a href="#"><i class="bi bi-instagram"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="sidebar">
+                    <ul class="list-group">
+                        <li class="list-group-item active"><i class="bi bi-card-list"></i> Chủng loại</li>
+                        <li> <a href="#" class="list-group-item list-group-item-action">Điện thoại</a></li>
+                        <li> <a href="#" class="list-group-item list-group-item-action">Laptop</a></li>
+                        <li> <a href="#" class="list-group-item list-group-item-action">Tablet</a></li>
+                        <li> <a href="#" class="list-group-item list-group-item-action">Tivi</a></li>
+                        <li> <a href="#" class="list-group-item list-group-item-action">Tủ lạnh</a></li>
+                        <li> <a href="#" class="list-group-item list-group-item-action">Đồ gia dụng</a></li>
+                    </ul>
+                    <ul class="list-group">
+                        <li class="list-group-item active"><i class="bi bi-card-list"></i> Nhà cung cấp</li>
+                        <li> <a href="#" class="list-group-item list-group-item-action">Apple</a></li>
+                        <li> <a href="#" class="list-group-item list-group-item-action">Samsung</a></li>
+                        <li> <a href="#" class="list-group-item list-group-item-action">Xiaomi</a></li>
+                        <li> <a href="#" class="list-group-item list-group-item-action">Vivo</a></li>
+                        <li> <a href="#" class="list-group-item list-group-item-action">Oppo</a></li>
+                        <li> <a href="#" class="list-group-item list-group-item-action">Huawe</a></li>
+                        <li> <a href="#" class="list-group-item list-group-item-action">Realme</a></li>
+                        <li> <a href="#" class="list-group-item list-group-item-action">Asus</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
