@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồ cá vui nhộn</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        #aquarium {
+            background-color: #00bfff;
+            width: 100vw; 
+            height: 100vh; 
+            position: relative; 
+        }
+        #aquarium div {
+            position: absolute;
+        }
+        #shark {
+            animation: moveShark 15s linear infinite;
+        }
+
+        @keyframes moveShark {
+            0% { top: 400px; left: -200px; transform: scaleX(1); }
+            49% { top: 100px; left: 100%; transform: scaleX(1); }
+            50% { top: 100px; left: 100%; transform: scaleX(-1); } /* Quay đầu */
+            99% { top: 400px; left: -200px; transform: scaleX(-1); }
+            100% { top: 400px; left: -200px; transform: scaleX(1); } /* Quay lại trạng thái ban đầu */
+        }
+        #turtle {
+            animation: moveTurtle 25s linear infinite;
+        }
+
+        @keyframes moveTurtle {
+            0% { top: 600px; left: 100%; transform: scaleX(-1); }
+            49% { top: 500px; left: -200px; transform: scaleX(-1); }
+            50% { top: 500px; left: -200px; transform: scaleX(1); } /* Quay đầu */
+            99% { top: 600px; left: 100%; transform: scaleX(1); }
+            100% { top: 600px; left: 100%; transform: scaleX(-1); }
+        }
+        #diver1 {
+            animation: moveDiver1 20s ease-in-out infinite;
+        }
+        @keyframes moveDiver1 {
+            0% { top: 50px; left: 20%; }
+            25% { top: 150px; left: 25%; }
+            50% { top: 50px; left: 30%; }
+            75% { top: 150px; left: 25%; }
+            100% { top: 50px; left: 20%; }
+        }
+        diver2 {
+            animation: moveDiver2 18s ease-in-out infinite;
+            animation-delay: 2s; /* Bắt đầu sau 2 giây */
+        }
+
+        @keyframes moveDiver2 {
+            0% { top: 100px; left: 80%; transform: scaleX(-1); }
+            50% { top: 300px; left: 60%; transform: scaleX(-1); }
+            100% { top: 100px; left: 80%; transform: scaleX(-1); }
+        }
+        #diver3 {
+            animation: moveDiver3 22s ease-in-out infinite;
+            animation-delay: 4s; 
+        }
+
+        @keyframes moveDiver3 {
+            0% { top: 400px; left: 40%; }
+            50% { top: 250px; left: 55%; }
+            100% { top: 400px; left: 40%; }
+        }
+        #goldFish {
+            animation: moveFish 30s linear infinite;
+        }
+
+        @keyframes moveFish {
+            0% { left: 100%; top: 200px; }
+            100% { left: -200px; top: 250px; }
+        }
+        #faintFish {
+            animation: moveFish 40s linear infinite;
+            animation-delay: 5s;
+        }
+    </style>
+</head
+<body>
+
+    <div id="aquarium">
+        <div id="shark">
+            <img src="shark.png" alt="Cá mập">
+        </div>
+
+        <div id="turtle">
+            <img src="turtle.png" alt="Rùa biển">
+        </div>
+
+        <div id="diver1">
+            <img src="diver1.png" alt="Thợ lặn 1">
+        </div>
+
+        <div id="diver2">
+            <img src="diver2.png" alt="Thợ lặn 2">
+        </div>
+
+        <div id="diver3">
+            <img src="diver3.png" alt="Thợ lặn 3">
+        </div>
+
+        <div id="goldFish">
+            <img src="goldFishSchool.png" alt="Đàn cá vàng">
+        </div>
+
+        <div id="faintFish">
+            <img src="faintSchool.png" alt="Đàn cá nhỏ">
+        </div>
+    </div>
+
+</body>
+</html>

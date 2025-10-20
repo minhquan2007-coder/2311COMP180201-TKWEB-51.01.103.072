@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="8-urf">
+    <meta name="viewport" content="with=device-width, initial-scale 1.0">
+    <style>
+        body{
+            background-color: #feecff;
+        }
+        #container {
+            padding: 0px 0x 5px;
+            border-radius: 10px;
+            width: 1000px;
+            margin: 0px auto;
+            min-height: 600px;
+            background-color: #f7d2ff;
+            background-position: right;
+            background-size: 1000px;
+            background-image: url(https://img.freepik.com/hinh-chup-mien-phi/nen-ket-cau-be-tong-hoa-tiet-mau-hong-nhat_53876-129734.jpg?semt=ais_hybrid&w=740&q=80);   
+        }
+        ul li {  
+            padding: 10px 10px;
+            display: inline-block;     
+        }
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        .b {
+            background-color: rgb(151, 207, 231);
+            border-radius: 100px;
+            color: black;
+        }
+        
+        li:hover {
+            background-color: rgb(151, 207, 231);
+            color: rgb(0, 0, 0);
+            border-radius: 100px;
+            padding: 10px ;
+        }
+        header {
+           background-color: rgb(216, 216, 216);
+            height: 60px;
+            position: relative;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            border-radius: 10px 10px 0px 0px ;
+        }
+        .abc {
+            background-color: #1c6876;
+            height: 70px;
+            
+        }
+        .form-group{
+            margin-bottom: 20px;
+        }
+        .form-control {
+            width: 400px;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; 
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #34495e;
+        }
+        .cachle{
+            margin: 10px;
+        }
+        textarea {
+            min-height: 120px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <b><font face="Arial">"Trong cách học, phải lấy tự học làm cốt." </font></b>
+            <br>
+            --Hồ Chí Minh--
+            <div style="position: absolute; top: 0px; right: 220px"> 
+                <img src="https://png.pngtree.com/png-vector/20240712/ourmid/pngtree-book-and-education-logo-vector-png-image_13061759.png" width="60", height="60",>
+            </div>
+            <div style="position: absolute; left: 220px;">
+                <img src="https://cdn-icons-png.flaticon.com/512/3854/3854825.png" width="60", height="60">
+
+            </div>
+        </header>
+            <nav class="abc">
+                <div style="float:left">
+                    <ul>
+                        <li><a href="trangchubaitap6.1.html">Trang chủ</a></li>
+                        <li><a href="kehoachhoctap.html">Kế hoạch học tập</a></li>
+                        <li><a href="sothich.html">Sở thích </a></li>
+                        <li class="b"><a href="#" class="b">Liên hệ</a></li>
+                        
+                    </ul>
+                </div>
+            </nav> 
+        <h1 align="center"> <font face="Arial"> Liên hệ & Góp Ý </h1>
+            <hr>
+            <div class="cachle">
+                    <div class="form-group">
+                    <label for="fullName">Họ và Tên </span></label>
+                    <input type="text" id="fullName" name="fullName" class="form-control" placeholder="Nhập họ và tên" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Địa chỉ Email</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Nhập email của bạn" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Số điện thoại</label>
+                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="Nhập số điện thoại">
+                </div>
+                <div class="form-group">
+                    <label for="message">Nội dung chi tiết</label>
+                    <textarea id="message" name="message" class="form-control" placeholder="Hãy góp ý cho mình ở đây" required></textarea>
+                </div>
+                <h3> Địa chỉ chi tiết </h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.650456668926!2d106.67960847497875!3d10.761399259470837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1b91dddf0b%3A0x1ab004c91f448812!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBTxrAgcGjhuqFtIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaA!5e0!3m2!1svi!2s!4v1760783088524!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            
+        
+    </div>
+    
+</body>
+</html>

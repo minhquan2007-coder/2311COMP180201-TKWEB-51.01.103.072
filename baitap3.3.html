@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng dụng Quản lý sản phẩm (Tiếng Việt)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        h3 {
+            margin-top: 0;
+        }
+        input[type="text"] {
+            width: 70%;
+            padding: 8px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .action-buttons button {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Thêm sản phẩm mới</h3>
+        <input type="text" id="oNhapSanPham" placeholder="Tên sản phẩm">
+        <button id="nutThem" onclick="themSanPham()">Thêm</button>
+        <p id="thongBao"></p>
+        <h3 style="margin-top: 30px;">Danh sách tất cả sản phẩm</h3>
+        <p id="soLuongSanPham"></p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tên sản phẩm</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody id="bangSanPham"></tbody>
+        </table>
+    </div>
+    <script>
+        let danhSachSanPham = [
+            "Sony Xperia", "Samsung Galaxy", "Nokia 6", "Xiaomi Redmi Note 4", 
+            "Apple iPhone 6S", "Xiaomi Mi 5s Plus", "Apple iPhone 8 Plus", 
+            "Fujitsu F-04E", "Oppo A71"
+        ];
+        const oNhapSanPham = document.getElementById('oNhapSanPham');
+        const thongBao = document.getElementById('thongBao');
+        function hienThiSanPham() {
+            const thanBang = document.getElementById('bangSanPham');
+            const demSanPham = document.getElementById('soLuongSanPham');
+        
+            thanBang.innerHTML = '';
+            demSanPham.textContent = `${danhSachSanPham.length} sản phẩm`;
+        
+            for (let i = 0; i < danhSachSanPham.length; i++) {
+                let tenSanPham = danhSachSanPham[i];
+                let hang = `
+                    <tr>
+                        <td>${tenSanPham}</td>
+                        <td class="action-buttons">
+                            <button onclick="suaSanPham(${i})">Sửa</button>
+                            <button onclick="xoaSanPham(${i})">Xóa</button>
+                        </td>
+                    </tr>
+                `;
+                thanBang.innerHTML += hang;
+            }
+        }
+        function themSanPham() {
+            const tenSanPhamMoi = oNhapSanPham.value.trim();
+
+            if (tenSanPhamMoi === '') {
+                thongBao.textContent = 'Tên sản phẩm không được để trống!';
+                thongBao.style.color = 'red';
+                return;
+            }
+
+            danhSachSanPham.push(tenSanPhamMoi);
+            thongBao.textContent = `Đã thêm thành công sản phẩm "${tenSanPhamMoi}"`;
+            thongBao.style.color = 'green';
+
+            oNhapSanPham.value = '';
+            hienThiSanPham();
+        }
+        function suaSanPham(chiSo) {
+            const tenHienTai = danhSachSanPham[chiSo];
+            const tenMoi = prompt("Vui lòng nhập tên mới cho sản phẩm:", tenHienTai);
+
+            if (tenMoi !== null && tenMoi.trim() !== '') {
+                danhSachSanPham[chiSo] = tenMoi.trim();
+                hienThiSanPham();
+                thongBao.textContent = 'Đã cập nhật sản phẩm thành công!';
+                thongBao.style.color = 'blue';
+            } else if (tenMoi !== null) {
+                thongBao.textContent = 'Tên sản phẩm không được để trống!';
+                thongBao.style.color = 'red';
+            }
+        }
+        function xoaSanPham(chiSo) {
+            if (confirm(`Bạn có chắc chắn muốn xóa sản phẩm "${danhSachSanPham[chiSo]}" không?`)) {
+                let tenSanPhamDaXoa = danhSachSanPham[chiSo];
+                danhSachSanPham.splice(chiSo, 1);
+                hienThiSanPham();
+                thongBao.textContent = `Đã xóa thành công sản phẩm "${tenSanPhamDaXoa}"`;
+                thongBao.style.color = 'orange';
+            }
+        }
+        hienThiSanPham();
+    </script>
+</body>
+</html>
