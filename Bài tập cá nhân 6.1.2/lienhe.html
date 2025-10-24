@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ - Halloween Party</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Nosifier&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a; 
+            font-family: Arial, sans-serif; 
+            color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .khung-lien-he {
+            background-color: #222; 
+            border: 3px solid #ff6600;
+            box-shadow: 0 0 30px rgba(255, 102, 0, 0.7);
+            width: 90%;
+            max-width: 600px;
+            padding: 40px;
+            border-radius: 10px;
+            margin-top: 30px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-family: 'Creepster';
+            font-size: 3em;
+            color: #ff6600;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        p.gioi-thieu {
+            font-size: 1.1em;
+            line-height: 1.6;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .nhom-bieu-mau {
+            margin-bottom: 20px;
+        }
+        .nhom-bieu-mau label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.2em;
+            color: #ff6600;
+            font-family: 'Creepster', cursive;
+        }
+        .nhom-bieu-mau input[type="text"],
+        .nhom-bieu-mau input[type="email"],
+        .nhom-bieu-mau textarea {
+            width: 100%;
+            padding: 12px;
+            background-color: #333;
+            border: 2px solid #555;
+            border-radius: 5px;
+            color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            font-size: 1em;
+            box-sizing: border-box; 
+            transition: border-color 0.3s ease;
+        }
+        .nhom-bieu-mau input[type="text"]:focus,
+        .nhom-bieu-mau input[type="email"]:focus,
+        .nhom-bieu-mau textarea:focus {
+            border-color: #ff6600;
+            outline: none;
+        }
+        .nhom-bieu-mau textarea {
+            min-height: 120px;
+            resize: vertical; 
+        }
+        .nut-gui {
+            display: inline-block;
+            background-color: #ff6600;
+            color: #1a1a1a;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            font-family: 'Creepster', cursive;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 0 10px rgba(255, 102, 0, 0.7);
+            margin-top: 10px;
+        }
+        .nut-gui:hover {
+            background-color: #ff944d;
+            transform: scale(1.05);
+        }
+        .lien-ket-quay-lai {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            color: #ff6600;
+            font-family: 'Creepster', cursive;
+            font-size: 1.5em;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .lien-ket-quay-lai:hover {
+            color: #ff944d;
+        }
+    </style>
+</head>
+<body>
+    <div class="khung-lien-he">
+        <h1>LIÊN HỆ VỚI CHÚNG TÔI</h1>
+        <p class="gioi-thieu">Có câu hỏi, ý tưởng ma quái hay chỉ muốn gửi lời chào? Hãy để lại lời nhắn bên dưới, chúng tôi sẽ hồi âm từ cõi âm...</p>
+        <form class="bieu-mau-lien-he" action="#" method="post"> 
+            <div class="nhom-bieu-mau">
+                <label for="ten">Họ và Tên:</label>
+                <input type="text" id="ten" name="ten" required placeholder="Nhập tên của bạn...">
+            </div>
+            <div class="nhom-bieu-mau">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Nhập email liên lạc...">
+            </div>
+            <div class="nhom-bieu-mau">
+                <label for="loi-nhan">Lời nhắn:</label>
+                <textarea id="loi-nhan" name="loi-nhan" required placeholder="Viết lời nhắn của bạn ở đây..."></textarea>
+            </div>
+            <button type="submit" class="nut-gui">Gửi Đi</button>
+        </form>
+    </div>
+    <a href="thumoi.html" class="lien-ket-quay-lai">Quay lại Thiệp Mời</a>
+</body>
+</html>

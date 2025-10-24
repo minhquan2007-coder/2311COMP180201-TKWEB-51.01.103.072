@@ -1,245 +1,140 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html> 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Thiết kế CV </title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Thiết kế CV</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-            line-height: 1.6;
+        .bg-dark .progress {
+    
+            background-color: #7f8c8d; 
         }
-        .cv-container {
-            display: flex;
-            max-width: 1000px;
-            margin: 30px auto;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-            min-height: 90vh;
-        }
-        .left-column {
-            background-color: #2c3e50; 
-            color: #ffffff; 
-            width: 40%;
-            padding: 30px;
-        }
-        .right-column {
-            background-color: #ffffff; 
-            color: #333333;
-            width: 60%;
-            padding: 30px;
-        }
-        .profile-image-container {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+        .container {
+            margin-top:10px;
+            max-width: 1090px;
 
-        .profile-image-container .icon {
-            font-size: 80px;
-            background-color: #ffffff;
-            color: #2c3e50;
-            border-radius: 50%;
-            padding: 25px;
-            border: 5px solid #bdc3c7;
-        } 
-        .profile-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 5px solid #bdc3c7;
-            object-fit: cover;
         }
-        .section-title {
-            text-transform: uppercase;
-            font-size: 18px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #7f8c8d;
-        }
-        .right-column .section-title {
-            color: #2c3e50;
-            border-bottom-color: #dddddd;
-        }
-        .contact-info p {
-            margin: 5px 0;
-            display: flex;
-            align-items: center;
-        }
-        .contact-info i {
-            width: 25px;
-        }
-        .skill {
-            margin-bottom: 15px;
-        }
-        .skill p {
-            margin: 0 0 5px;
-        }
-        .skill-bar {
-            background-color: #7f8c8d;
-            border-radius: 5px;
-            height: 12px;
-            width: 100%;
-        }
-        .skill-level {
-            background-color: #ffffff;
-            height: 100%;
-            border-radius: 5px;
-        }
-        .header {
-            margin-bottom: 40px;
-        }
-        .header h1 {
-            margin: 0;
-            font-size: 42px;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
-        .header p {
-            margin: 5px 0 0;
-            font-size: 20px;
-            color: #7f8c8d;
-        }
-        .entry {
-            margin-bottom: 25px;
-        }
-        .entry-title {
-            font-size: 16px;
-            font-weight: bold;
-            margin: 0;
-        }
-        .entry-info {
-            font-size: 14px;
-            font-style: italic;
-            color: #555;
-            margin: 2px 0 5px;
-        }
-        .entry-description {
-            font-size: 14px;
-            margin: 0;
-        }
+    
     </style>
 </head>
-<body>
+<body class="bg-body-tertiary">
+    <div class="container">
+        <div class="row shadow-lg rounded overflow-hidden">
+            <div class="col-lg-5 bg-dark text-white p-4 p-md-5">
+                <div class="text-center mb-4">
+                    <img src="https://cellphones.com.vn/sforum/wp-content/uploads/2023/10/avatar-trang-4.jpg" 
+                         class="img-fluid rounded-circle border border-4 border-light-subtle" 
+                         alt="Ảnh đại diện"
+                         style="width: 150px; height: 150px; object-fit: cover;">
+                </div>
+                <div class="mb-4">
+                    <h2 class="h5 text-uppercase fw-bold ls-1 border-bottom border-secondary pb-2 mb-3">Giới thiệu</h2>
+                    <p class="small">
+                        Mình là sinh viên năm nhất Trường Đại học Sư phạm Thành Phố Hồ Chí Minh.
+                    </p>
+                </div>
+                <div class="mb-4">
+                    <h2 class="h5 text-uppercase fw-bold ls-1 border-bottom border-secondary pb-2 mb-3">Liên hệ</h2>
+                    <p class="d-flex align-items-center mb-2 small">
+                        <i class="bi bi-geo-alt-fill me-3"></i> phường Đông Thành, Vĩnh Long
+                    </p>
+                    <p class="d-flex align-items-center mb-2 small">
+                        <i class="bi bi-telephone-fill me-3"></i> 0775256144
+                    </p>
+                    <p class="d-flex align-items-center mb-2 small">
+                        <i class="bi bi-envelope-fill me-3"></i> 5101103072@student.hcmue.edu.vn
+                    </p>
+                </div>
+                <div class="mb-4">
+                    <h2 class="h5 text-uppercase fw-bold ls-1 border-bottom border-secondary pb-2 mb-3">Skills</h2>
 
-    <div class="cv-container">
-        <div class="left-column">
-            
-            <div class="profile-image-container">
-                <img src="https://cellphones.com.vn/sforum/wp-content/uploads/2023/10/avatar-trang-4.jpg" class="profile-image">
-            </div>
+                    <p class="small fw-bold mb-1">HTML</p>
+                    <div class="progress mb-3" role="progressbar" aria-label="HTML" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="height: 12px">
+                        <div class="progress-bar bg-light" style="width: 70%"></div>
+                    </div>
 
-            <div class="section">
-                <h2 class="section-title">Giới thiệu</h2>
-                <p>
-                    Mình là sinh viên năm nhất Trường Đại học Sư phạm Thành Phố Hồ Chí Minh.
-                </p>
-            </div>
+                    <p class="small fw-bold mb-1">CSS</p>
+                    <div class="progress mb-3" role="progressbar" aria-label="CSS" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="height: 12px">
+                        <div class="progress-bar bg-light" style="width: 70%"></div>
+                    </div>
 
-            <div class="section contact-info">
-                <h2 class="section-title">Liên hệ</h2>
-                <p><i class="fas fa-map-marker-alt"></i> &nbsp; phường Đông Thành, Vĩnh Long</p>
-                <p><i class="fas fa-phone"></i> &nbsp; 0775256144</p>
-                <p><i class="fas fa-envelope"></i> &nbsp; 5101103072@student.hcmue.edu.vn</p>
-            </div>
-            <div class="section">
-                <h2 class="section-title">Skills</h2>
-                <div class="skill">
-                    <p>HTML</p>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 70%;"></div>
+                    <p class="small fw-bold mb-1">JavaScript</p>
+                    <div class="progress mb-3" role="progressbar" aria-label="JavaScript" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="height: 12px">
+                        <div class="progress-bar bg-light" style="width: 30%"></div>
+                    </div>
+                    
+                    <p class="small fw-bold mb-1">Photoshop</p>
+                    <div class="progress mb-3" role="progressbar" aria-label="Photoshop" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="height: 12px">
+                        <div class="progress-bar bg-light" style="width: 30%"></div>
                     </div>
                 </div>
-                <div class="skill">
-                    <p>CSS</p>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 70%;"></div>
+
+                <div class="mb-4">
+                    <h2 class="h5 text-uppercase fw-bold ls-1 border-bottom border-secondary pb-2 mb-3">Reference Person</h2>
+                    <p class="small"><strong>...</strong></p>
+                    <p class="small">...</p>
+                    <p class="small">...</p>
+                </div>
+
+            </div>
+            <div class="col-lg-7 bg-white text-dark p-4 p-md-5">
+                
+                <div class="mb-5">
+                    <h1 class="h1 text-uppercase fw-bolder">Nguyễn Sơn Minh Quân</h1>
+                    <p class="h4 text-secondary ls-1">Student</p>
+                </div>
+
+                <div class="mb-4">
+                    <h2 class="h5 text-uppercase fw-bold ls-1 text-dark border-bottom pb-2 mb-4">Học tập</h2>
+                    
+                    <div class="mb-4">
+                        <h3 class="h6 fw-bold m-0">Học sinh tiểu học</h3>
+                        <p class="text-muted small mb-1">Trường tiểu học Phù Ly | 2013 - 2018</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h3 class="h6 fw-bold m-0">Học sinh trung học</h3>
+                        <p class="text-muted small mb-1">Trường trung học cơ sở Đông Bình | 2018 - 2022</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h3 class="h6 fw-bold m-0">Học sinh trung học</h3>
+                        <p class="text-muted small mb-1">Trường trung học phổ thông Hoàng Thái Hiếu | 2022 - 2025</p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h3 class="h6 fw-bold m-0">Sinh viên ngành Sư phạm Tin học</h3>
+                        <p class="text-muted small mb-1">Trường Đại học Sư phạm Thành Phố Hồ Chí Minh | 2025 - 2029</p>
                     </div>
                 </div>
-                <div class="skill">
-                    <p>JavaScript</p>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 30%;"></div>
+
+                <div class="mb-4">
+                    <h2 class="h5 text-uppercase fw-bold ls-1 text-dark border-bottom pb-2 mb-4">Thành tích</h2>
+                    <div class="mb-4">
+                        <h3 class="h6 fw-bold m-0">Tham gia kì thi HSG cấp tỉnh</h3>
+                        <p class="text-muted small mb-2">lớp 12 | 2024 - 2025</p>
+                        <ul class="small ps-4">
+                            <li>Tham gia kì thi HSG cấp tỉnh môn Vật Lý.</li>
+                            <li>Tham gia kì thi HSG máy tính cầm tay môn Vật Lý.</li>
+                        </ul>
                     </div>
                 </div>
-                 <div class="skill">
-                    <p>Photoshop</p>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 30%;"></div>
+                
+                <div class="mb-4">
+                    <h2 class="h5 text-uppercase fw-bold ls-1 text-dark border-bottom pb-2 mb-4">Chứng chỉ</h2>
+                    <div class="mb-4">
+                        <h3 class="h6 fw-bold m-0">......</h3>
+                        <p class="text-muted small mb-1">......</p>
                     </div>
                 </div>
+
             </div>
 
-            <div class="section">
-                <h2 class="section-title">Reference Person</h2>
-                <p><strong></strong></p>
-                <p></p>
-                <p></p>
-            </div>
-
-        </div>
-        <div class="right-column">
-            <div class="header">
-                <h1>Nguyễn Sơn Minh Quân</h1>
-                <p>Student</p>
-            </div>
-            <div class="section">
-                <h2 class="section-title">Học tập</h2>
-                <div class="entry">
-                    <p class="entry-title">Học sinh tiểu học</p>
-                    <p class="entry-info">Trường tiểu học Phù Ly | 2013 - 2018</p>
-                    <p class="entry-description">
-                        
-                    </p>
-                </div>
-                <div class="entry">
-                    <p class="entry-title">Học sinh trung học</p>
-                    <p class="entry-info">Trường trung học cơ sở Đông Bình | 2018 - 2022</p>
-                    <p class="entry-description">
-                        
-                    </p>
-                </div>
-                  <div class="entry">
-                    <p class="entry-title">Học sinh trung học</p>
-                    <p class="entry-info">Trường trung học phổ thông Hoàng Thái Hiếu | 2022 - 2025</p>
-                    <p class="entry-description">
-                        
-                    </p>
-                </div>
-                <div class="entry">
-                    <p class="entry-title">Sinh viên ngành Sư phạm Tin học</p>
-                    <p class="entry-info">Trường Đại học Sư phạm Thành Phố Hồ Chí Minh | 2025 - 2029</p>
-                    <p class="entry-description">
-                        
-                    </p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Thành tích</h2>
-                <div class="entry">
-                    <p class="entry-title">Tham gia kì thi HSG cấp tỉnh</p>
-                    <p class="entry-info"> lớp 12 | 2024 - 2025</p>
-                    <p class="entry-description">
-                        - Tham gia kì thi HSG cấp tỉnh môn Vật Lý. <br>
-                        - Tham gia kì thi HSG máy tính cầm tay môn Vật Lý.<br>
-                    </p>
-                </div>
-            </div>
-            
-            <div class="section">
-                <h2 class="section-title">Chứng chỉ</h2>
-                 <div class="entry">
-                    <p class="entry-title">......</p>
-                    <p class="entry-info">......</p>
-                </div>
-            </div>
         </div>
     </div>
-
+    
 </body>
 </html>
+

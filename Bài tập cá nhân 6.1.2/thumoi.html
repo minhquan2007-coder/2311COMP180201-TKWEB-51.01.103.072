@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiệp Mời Halloween</title>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Nosifier&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1a1a1a;
+            font-family: 'Nosifier', sans-serif;
+            color: #f0f0f0;
+        }
+        .khung-thiep-moi {
+            height: 100vh;
+            aspect-ratio: 800 / 1000;
+            max-width: 100vw;
+            max-height: 100vh;
+            background-image: url('backgound.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 5px solid #ff6600;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        .menu-dieu-huong {
+            position: absolute;
+            bottom: 2vh;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 2vh 0;
+            border-top: 2px solid #ff6600;
+            overflow-y: auto;
+        }
+
+        .menu-dieu-huong ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .menu-dieu-huong li {
+            margin: 0 1.5vh;
+        }
+
+        .menu-dieu-huong li a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #f0f0f0;
+            font-size: 2.2vh;
+            font-family: 'Creepster', cursive;
+            transition: color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+        }
+        .menu-dieu-huong li:not(.nut-hanh-dong) a:hover {
+            color: #ff6600;
+            transform: translateY(-5px);
+        }
+        .icon-menu {
+            width: 4vh;
+            height: 4vh;
+            margin-right: 1vh;
+            filter: drop-shadow(0 0 5px rgba(255, 102, 0, 0.7));
+            transition: transform 0.3s ease;
+        }
+        .menu-dieu-huong li:not(.nut-hanh-dong) a:hover .icon-menu {
+            transform: scale(1.1);
+        }
+        .dieu-khien-am-thanh {
+            position: absolute;
+            bottom: 2.5vh;
+            right: 2.5vh;
+        }
+        .dieu-khien-am-thanh button {
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 5.5vh;
+            height: 5.5vh;
+            font-size: 2.5vh;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(255, 102, 0, 0.7);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .dieu-khien-am-thanh button:hover {
+            background-color: #e65c00;
+            transform: scale(1.1);
+        }
+        .menu-dieu-huong li.nut-hanh-dong a {
+            background-color: #ff6600;
+            color: #1a1a1a;
+            padding: 1vh 2vh;
+            border-radius: 30px;
+            font-weight: bold;
+            box-shadow: 0 0 15px rgba(255, 102, 0, 0.8);
+            animation: pulse-glow 2s infinite alternate;
+        }
+
+        @keyframes pulse-glow {
+            0% {
+                background-color: #ff6600;
+                box-shadow: 0 0 15px rgba(255, 102, 0, 0.8);
+            }
+            50% {
+                background-color: #ff944d;
+                box-shadow: 0 0 25px rgba(255, 102, 0, 1.2), 0 0 35px rgba(255, 200, 0, 0.5);
+            }
+            100% {
+                background-color: #ff6600;
+                box-shadow: 0 0 15px rgba(255, 102, 0, 0.8);
+            }
+        }
+        .menu-dieu-huong li.nut-hanh-dong a:hover {
+            background-color: #ff944d;
+            color: #000;
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 0 25px rgba(255, 102, 0, 1);
+            animation: none;
+        }
+        .noi-dung-trang {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 100;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .noi-dung-trang-ben-trong {
+            background-color: #1a1a1a;
+            border: 3px solid #ff6600;
+            box-shadow: 0 0 30px rgba(255, 102, 0, 0.7);
+            width: 80%;
+            max-width: 800px;
+            height: 80vh;
+            overflow-y: auto;
+            padding: 40px;
+            position: relative;
+            font-family: Arial, sans-serif;
+            color: #f0f0f0;
+            box-sizing: border-box;
+        }
+
+        .noi-dung-trang-ben-trong h1 {
+            font-family: 'Creepster', cursive;
+            font-size: 3em;
+            color: #ff6600;
+            text-align: center;
+            margin-top: 0;
+        }
+        .noi-dung-trang-ben-trong p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .nut-dong {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 3em;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            transition: color 0.3s ease;
+        }
+        .nut-dong:hover {
+            color: #ff6600;
+        }
+        .luoi-thanh-vien {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .thanh-vien-nhom {
+            text-align: center;
+            width: 150px;
+        }
+
+        .thanh-vien-nhom img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #ff6600;
+            object-fit: cover;
+            background-color: #333;
+        }
+        .thanh-vien-nhom h3 {
+            font-family: 'Creepster', cursive;
+            font-size: 1.8em;
+            color: #ff6600;
+            margin-bottom: 5px;
+        }
+        .thanh-vien-nhom p {
+            font-size: 1em;
+            margin-top: 0;
+        }
+        .khung-ds-san-pham {
+            width: 100%;
+            margin-top: 20px;
+        }
+        .muc-ds-san-pham {
+            margin-bottom: 10px;
+        }
+        .tieu-de-ds-san-pham {
+            background-color: #2a2a2a;
+            border: 2px solid #ff6600;
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .tieu-de-ds-san-pham:hover {
+            background-color: #3a3a3a;
+        }
+        .tieu-de-ds-san-pham h3 {
+            font-family: 'Creepster', cursive;
+            font-size: 1.8em;
+            color: #ff6600;
+            margin: 0;
+        }
+        .tieu-de-ds-san-pham .gia-tien {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #fff;
+            margin-left: 20px;
+        }
+        .tieu-de-ds-san-pham .icon-an-hien {
+            font-size: 2em;
+            color: #ff6600;
+            font-weight: bold;
+            font-family: 'Arial', sans-serif;
+            transition: transform 0.3s ease;
+        }
+        .chi-tiet-san-pham {
+            display: none;
+            background-color: #111;
+            border: 2px solid #444;
+            border-top: none;
+            padding: 20px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            align-items: center;
+            gap: 20px;
+        }
+        .chi-tiet-san-pham img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 2px solid #ff6600;
+            border-radius: 5px;
+            flex-shrink: 0;
+        }
+        .chi-tiet-san-pham-van-ban p {
+            font-size: 0.95em;
+            line-height: 1.5;
+            margin: 0;
+        }
+        .luoi-thu-vien-anh {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .anh-thu-nho {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border: 3px solid #ff6600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .anh-thu-nho:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 102, 0, 0.7);
+        }
+        .nut-dong-hop-den {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 4em;
+            color: #fff;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .nut-dong-hop-den:hover {
+            color: #ff6600;
+        }
+        .noi-dung-hop-den {
+            display: block;
+            margin: auto;
+            border: 3px solid #ff6600;
+            max-width: 90%;
+            max-height: 90vh;
+        }
+        .khung-video {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 56.25%;
+            margin: 20px 0;
+            border: 2px solid #ff6600;
+            border-radius: 5px;
+            background-color: #000;
+        }
+        .khung-video iframe,
+        .khung-video video { 
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="khung-thiep-moi">
+        <div class="menu-dieu-huong">
+            <ul>
+                <li> <a data-muc-tieu="#gioi-thieu-nhom"> <img src="Iconcreme-Halloween-Home.512.png" alt="Icon Nhà ma" class="icon-menu"> <span>Giới thiệu nhóm</span> </a> </li>
+                <li> <a data-muc-tieu="#lich-su-halloween"> <img src="Iconcreme-Halloween-Mummy.512.png" alt="Icon Xác ướp" class="icon-menu"> <span>Lịch sử Halloween</span> </a> </li>
+                <li> <a data-muc-tieu="#gian-hang-san-pham"> <img src="Iconcreme-Halloween-Pumpkin.512.png" alt="Icon Bí ngô" class="icon-menu"> <span>Gian hàng sản phẩm</span> </a> </li>
+                <li> <a data-muc-tieu="#bo-suu-tap-anh"> <img src="Iconcreme-Halloween-Bat.512.png" alt="Icon Dơi" class="icon-menu"> <span>Bộ sưu tập ảnh</span> </a> </li>
+                <li> <a href="lienhe.html"> <img src="Iconcreme-Halloween-Cat.512.png" alt="Icon Mèo đen" class="icon-menu"> <span>Liên hệ</span> </a> </li>
+                <li class="nut-hanh-dong"> <a href="trangdangky.html"> <img src="Iconcreme-Halloween-Twitter.512.png" alt="Icon Ma" class="icon-menu"> <span>Đăng ký tham gia</span> </a> </li>
+            </ul>
+        </div>
+        <div class="dieu-khien-am-thanh">
+            <button id="nut-bat-tat-nhac"> <i class="fas fa-volume-up"></i> </button>
+            <audio id="nhac-halloween" loop> <source src="Thành Ác Ma - Gunny OST.mp3"></audio>
+        </div>
+    </div>
+    <section class="noi-dung-trang" id="gioi-thieu-nhom">
+        <div class="noi-dung-trang-ben-trong">
+            <a class="nut-dong">&times;</a>
+            <h1>BAN TỔ CHỨC MA QUÁI</h1>
+            <p>Chúng tôi là những linh hồn đã tập hợp lại để tạo nên bữa tiệc Halloween đáng nhớ này. Hãy cẩn thận, chúng tôi đã bỏ bùa vào từng dòng code!</p>
+            <div class="luoi-thanh-vien">
+                <div class="thanh-vien-nhom"> <img src="https://img.lovepik.com/free_png/32/38/89/35958PICAa2M58PICrfN58PICYgPD_PIC2018.png_860.png" alt="Ảnh thành viên"> <h3>Phù Thủy Trưởng</h3> <p>Quân</p> </div>
+                <div class="thanh-vien-nhom"> <img src="https://img.lovepik.com/original_origin_pic/18/10/18/2a8500e34f782ea1a245d88fd75c91c7.png_wh860.png" alt="Ảnh thành viên"> <h3>Họa Sĩ Quái Dị</h3> <p>Quân</p> </div>
+                <div class="thanh-vien-nhom"> <img src="https://img.pikbest.com/png-images/20240926/a-cute-halloween-ghost-in-a-hat_10890111.png!w700wp" alt="Ảnh thành viên"> <h3>Kẻ Kể Chuyện Ma</h3> <p>Quân</p> </div>
+                <div class="thanh-vien-nhom"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3aVoho9-lKQlK4Ve9I1G9VXmgoI-HVTsH1A&s" alt="Ảnh thành viên"> <h3>Kỹ Sư Âm Phủ</h3> <p>Quân</p> </div>
+            </div>
+        </div>
+    </section>
+    <section class="noi-dung-trang" id="lich-su-halloween">
+         <div class="noi-dung-trang-ben-trong">
+            <a class="nut-dong">&times;</a>
+            <h1>LỊCH SỬ HALLOWEEN</h1>
+            <h2>Lịch sử Halloween</h2>
+            <p> Halloween, hay còn gọi là "All Hallows' Eve" (Đêm Vọng Lễ Các Thánh), là một lễ hội có lịch sử hàng ngàn năm tuổi, pha trộn giữa truyền thống của người Celt cổ đại, nghi lễ của La Mã và ảnh hưởng của Thiên chúa giáo.</p>
+            <h2>Nguồn Gốc Từ Lễ Hội Samhain</h2>
+           <p>Nguồn gốc sâu xa nhất của Halloween bắt nguồn từ lễ hội Samhain (phát âm là 'sow-in') của người Celt cổ đại, sống cách đây hơn 2.000 năm ở khu vực mà ngày nay là Ireland, Vương quốc Anh và miền bắc nước Pháp. </p>
+            <p>Đối với người Celt, năm mới của họ bắt đầu vào ngày 1 tháng 11. Đêm trước năm mới, 31 tháng 10, là thời điểm họ ăn mừng lễ hội Samhain. Đây là thời điểm kết thúc mùa màng và bắt đầu mùa đông tăm tối, lạnh lẽo - một khoảng thời gian trong năm thường gắn liền với cái chết.</p>
+            <p>Người Celt tin rằng vào đêm Samhain, ranh giới giữa thế giới người sống và người chết trở nên mờ nhạt nhất. Các linh hồn của người đã khuất có thể quay trở lại trần gian. Để xua đuổi những tà ma hoặc linh hồn không mong muốn, họ đốt những đống lửa trại khổng lồ và mặc các trang phục ma quái (thường làm từ da và đầu động vật) để ngụy trang, tránh bị các linh hồn nhận ra.</p>
+            <h2>Sự Can Thiệp Của Thiên Chúa Giáo</h2>
+            <p>Vào thế kỷ thứ 8, Giáo hoàng Gregory III đã chỉ định ngày 1 tháng 11 là ngày Lễ Các Thánh (All Saints' Day), một ngày để tôn vinh tất cả các vị thánh. Nhiều nhà sử học tin rằng đây là một nỗ lực có chủ ý của nhà thờ để "Thiên chúa hóa" lễ hội Samhain của người ngoại đạo. </p>
+            <p>Buổi tối trước Lễ Các Thánh (ngày 31 tháng 10) được gọi là "All Hallows' Eve", và qua nhiều thế kỷ, cái tên này dần dần được rút gọn thành "Halloween".</p>
+            <h2>"Trick-or-Treat" (Cho Kẹo Hay Bị Ghẹo)</h2>
+            <p>Phong tục "Trick-or-Treat" được cho là sự kết hợp của nhiều truyền thống. Vào thời Trung cổ, vào ngày Lễ Các Đẳng (All Souls' Day - 2/11), những người nghèo (gọi là "sou'lers") sẽ đi "cầu hồn" (souling). Họ đi từng nhà xin "bánh linh hồn" (soul cakes) - một loại bánh quy nhỏ. Đổi lại, họ hứa sẽ cầu nguyện cho linh hồn của những người thân đã khuất trong gia đình. </p>
+            <p>Phong tục này sau đó được trẻ em tiếp nhận, chúng cũng đi từ nhà này sang nhà khác để xin thức ăn, tiền bạc hoặc bia. Dần dần, nó phát triển thành trò "Trick-or-Treat" hiện đại, nơi trẻ em mặc đồ hóa trang và nhận kẹo, với ngụ ý "trick" (một trò nghịch ngợm) nếu không nhận được "treat" (kẹo).</p>
+            <p>Ngày nay, Halloween là một lễ hội toàn cầu, là sự pha trộn của tất cả các lịch sử này: một chút ma quái của Samhain, một chút tưởng niệm của Lễ Các Thánh, và rất nhiều niềm vui của các truyền thống hiện đại.</p>
+            <div class="khung-video">
+                <video controls> <source src="lichsuu.mp4" type="video/mp4"> </video>
+            </div>
+        </div>
+    </section>
+    <section class="noi-dung-trang" id="gian-hang-san-pham">
+        <div class="noi-dung-trang-ben-trong">
+            <a class="nut-dong">&times;</a>
+            <h1>GIAN HÀNG RÙNG RỢN</h1>
+            <p>Hãy nếm thử những món ăn đặc trưng! Nhấp vào để xem chi tiết.</p>
+            <div class="khung-ds-san-pham">
+                <div class="muc-ds-san-pham">
+                    <div class="tieu-de-ds-san-pham"> <div> <h3>Ngón Tay Phù Thủy</h3> <span class="gia-tien">45.000đ / 5 ngón</span> </div> <span class="icon-an-hien">+</span> </div>
+                    <div class="chi-tiet-san-pham"> <img src="https://cdn.giaoducthoidai.vn/images/b4508baace0d9fe4c8bbd296e259642e15a4497388ad3136de92c0ac34b8e9e518089ca9852b822ee8684bd713ef7ae1dd6ea3040394e57bb0784785a3ebb561/1_SMUQ.jpg" alt="Ngón Tay Phù Thủy"> <div class="chi-tiet-san-pham-van-ban"> <p>Bánh quy bơ giòn rụm tạo hình ngón tay...</p> </div> </div>
+                </div>
+                <div class="muc-ds-san-pham">
+                    <div class="tieu-de-ds-san-pham"> <div> <h3>Bánh Não Zombie</h3> <span class="gia-tien">99.000đ / cái</span> </div> <span class="icon-an-hien">+</span> </div>
+                    <div class="chi-tiet-san-pham"> <img src="https://lambanhngon.com/product_pictures/s-banh-gato-sinh-nhat-dep-hunnie-cake-yhz1571997609.jpg" alt="Bánh Não Zombie"> <div class="chi-tiet-san-pham-van-ban"> <p>Bánh red velvet phủ kem phô mai...</p> </div> </div>
+                </div>
+                <div class="muc-ds-san-pham">
+                    <div class="tieu-de-ds-san-pham"> <div> <h3>Đồ Uống "Máu Rồng"</h3> <span class="gia-tien">35.000đ / ly</span> </div> <span class="icon-an-hien">+</span> </div>
+                    <div class="chi-tiet-san-pham"> <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcRpIkQ5p_sLJCNwu2JWjs-xh4PbEhT5j-Mjqj3uJeNJSNnZaaHItfuvKNOexLA_aMjeOZdV1tOQ_W5UZjJZw32GZOIt_-FbTs0qXeX656WGBQsWrO4" alt="Đồ Uống Máu Rồng"> <div class="chi-tiet-san-pham-van-ban"> <p>Hỗn hợp soda chanh, si-rô lựu...</p> </div> </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="noi-dung-trang" id="bo-suu-tap-anh">
+        <div class="noi-dung-trang-ben-trong">
+            <a class="nut-dong">&times;</a>
+            <h1>BỘ SƯU TẬP KINH DỊ</h1>
+            <p>Những khoảnh khắc rùng rợn nhất... Nhấp để nhìn rõ hơn.</p>
+            <div class="luoi-thu-vien-anh">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ0jW3eNyR86qmk5mbXOAwm4_tEN4WS3-MtQ&s" alt="Ảnh Halloween 1" class="anh-thu-nho">
+                <img src="https://hoanghamobile.com/tin-tuc/wp-content/uploads/2024/07/anh-kinh-di.jpg" alt="Ảnh Halloween 2" class="anh-thu-nho">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2gievCnuu-OJImAMouKn1ncGwdUAb8donsg&s" alt="Ảnh Halloween 3" class="anh-thu-nho">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_aHI1Rug6y9IxYkgHdeSm8bugo2X85TcuWA&s" alt="Ảnh Halloween 4" class="anh-thu-nho">
+                <img src="https://cdn-media.sforum.vn/storage/app/media/wp-content/uploads/2024/04/anh-ma-kinh-di-thumb.jpg" alt="Ảnh Halloween 5" class="anh-thu-nho">
+                <img src="https://static2-images.vnncdn.net/files/publish/2022/10/27/halloween-212.jpg?width=260&s=8oBTQSvOhxHIntJe8o3wQQ" alt="Ảnh Halloween 6" class="anh-thu-nho">
+                <img src="https://media.istockphoto.com/id/1327837669/vi/anh/bi%E1%BB%87t-th%E1%BB%B1-b%E1%BB%8B-b%E1%BB%8F-hoang-ma-%C3%A1m-c%C5%A9-trong-r%E1%BB%ABng-%C4%91%C3%AAm-r%C3%B9ng-r%E1%BB%A3n-v%E1%BB%9Bi-b%E1%BA%A7u-kh%C3%B4ng-kh%C3%AD-s%C6%B0%C6%A1ng-m%C3%B9-l%E1%BA%A1nh-l%E1%BA%BDo-k%E1%BA%BFt.jpg?s=612x612&w=0&k=20&c=hMY2zs6kt3xNIwPT_wLDeNge95AIAkIeyPgc6Ll64Ow=" alt="Ảnh Halloween 7" class="anh-thu-nho">
+                <img src="https://images.pexels.com/photos/28302294/pexels-photo-28302294/free-photo-of-trang-ph-c-halloween-kinh-d-ghostface.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Ảnh Halloween 8" class="anh-thu-nho">
+            </div>
+        </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            const audio = $('#nhac-halloween')[0];
+            const musicToggleBtn = $('#nut-bat-tat-nhac');
+            let isPlaying = false;
+            musicToggleBtn.on('click', function() {
+                if (isPlaying) { audio.pause(); $(this).html('<i class="fas fa-volume-mute"></i>'); isPlaying = false; } 
+                else { audio.play(); $(this).html('<i class="fas fa-volume-up"></i>'); isPlaying = true; }
+            });
+            $('.menu-dieu-huong a[data-muc-tieu]').on('click', function(e) { 
+                e.preventDefault(); 
+                var targetPage = $(this).data('muc-tieu'); 
+                if ($(targetPage).length) { $(targetPage).css('display', 'flex').hide().fadeIn(400); }
+            });
+            $('.nut-dong').on('click', function() {
+                var $pageContent = $(this).closest('.noi-dung-trang');
+                $pageContent.fadeOut(400);
+                var video = $pageContent.find('video'); 
+                if (video.length > 0) { video[0].pause(); video[0].currentTime = 0; }
+            });
+            $('.tieu-de-ds-san-pham').on('click', function() {
+                var details = $(this).next('.chi-tiet-san-pham');
+                details.slideToggle(300);
+                var icon = $(this).find('.icon-an-hien');
+                if (icon.text() === '+') { icon.text('-'); details.css('display', 'flex'); } 
+                else { icon.text('+'); }
+                $('.chi-tiet-san-pham').not(details).slideUp(300);
+                $('.tieu-de-ds-san-pham').not(this).find('.icon-an-hien').text('+');
+            });
+            $('.anh-thu-nho').on('click', function() {
+                var imgSrc = $(this).attr('src'); 
+                $('.noi-dung-hop-den').attr('src', imgSrc); 
+                $('.hop-den').fadeIn(300); 
+            });
+            $('.nut-dong-hop-den, .hop-den').on('click', function(e) {
+                if (e.target === this || $(e.target).hasClass('nut-dong-hop-den')) { $('.hop-den').fadeOut(300); }
+            });
+        });
+    </script>
+</body>
+</html>
+
